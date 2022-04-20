@@ -23,12 +23,8 @@ module.exports = {
         const param = serach_text + "%";
         try {
           rows = (
-            await db.query(SQL`
-        SELECT trunk, MIN(tariff) FROM 
-      teleco_route WHERE mobile LIKE ${param}
-    AND
-    "blocked" != 'Y'
-  GROUP BY trunk;
+            await db.query(SQL`SELECT trunk, MIN(tariff) FROM  teleco_route WHERE mobile LIKE ${param}
+            AND  "blocked" != 'Y' GROUP BY trunk;
         `)
           ).rows;
         } catch (error) {
@@ -62,7 +58,7 @@ module.exports = {
         const temp_tariff = min_tariff.serach_text + "%";
         rows = (
           await db.query(SQL`
-      SELECT DISTINCT mobile, prefix, country, trunk, tariff FROM teleco_route WHERE trunk=${telco} AND tariff=${min_tariff.value} AND mobile LIKE ${temp_tariff} LIMIT 1;
+      SELECT DISTINCT mobile, prefix, country, trunk, description, tariff FROM teleco_route WHERE trunk=${telco} AND tariff=${min_tariff.value} AND mobile LIKE ${temp_tariff} LIMIT 1;
           `)
         ).rows;
         response.push(rows[0]);
