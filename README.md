@@ -17,8 +17,13 @@ return the least cost route for a given destination.
 ## Setup
 - git clone https://github.com/iamtope/lcr.git
 - run `npm install` to install your dependencies
-- run the following queries on your database terminal to seed your data into the database
+
+### run the following queries on your database terminal to seed your data into the database
+
+## Link to Technical Specification Document
+https://docs.google.com/document/d/1uofrLFi96PEheFemTNs_9OfnlrtZ9HpAY2UjDq9kvdE/edit?usp=sharing
 ## 1
+```
 CREATE TABLE teleco_route (
     id SERIAL PRIMARY KEY,
     start_date TEXT,
@@ -32,7 +37,9 @@ CREATE TABLE teleco_route (
     description TEXT,
     cli_a TEXT
   );
+  ```
 ## 2
+```
   COPY
     teleco_route(
       start_date,
@@ -100,7 +107,7 @@ teleco_route(
 FROM 'Users/abassadamo/Downloads/Tech_Interview/lcr/rate_lists/wavecrest.csv'
 DELIMITER ';'
 CSV HEADER;
-
+```
 
 - Replace lines containing Users/abassadamo/Downloads/Tech_Interview/lcr/rate_lists/.... with the right path to each csv files in your computer
 
@@ -108,7 +115,7 @@ CSV HEADER;
 
 - Navigate to `http://localhost:15000/api/destination` [`POST REQUEST`]
 
-- Use the sample request body: 
+### Use the sample request body: 
 {
     "destination": "31627002259"
 }
