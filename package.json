@@ -1,0 +1,42 @@
+{
+  "name": "lcr",
+  "private": true,
+  "version": "1.0.0",
+  "description": "An implementation of a LCR service in NodeJS that provides an API that can return the least cost route for a given destination",
+  "main": "config.js",
+  "scripts": {
+    "test": "xo",
+    "lint": "xo",
+    "format": "xo --fix",
+    "start": "node ./bin/start.js",
+    "dev": "nodemon ./bin/start.js",
+    "migrate": "node ./bin/migrate.js",
+    "migrate:create": "migrate create --migrations-dir='./src/migrations'"
+  },
+  "keywords": [
+    "express",
+    "postgres"
+  ],
+  "author": "Abass Adamo",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "client-sessions": "^0.8.0",
+    "express": "^4.17.1",
+    "fast-csv": "^4.3.6",
+    "helmet": "^4.6.0",
+    "migrate": "^1.7.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "sql-template-strings": "^2.2.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "xo": "^0.36.1"
+  },
+  "xo": {
+    "prettier": true,
+    "space": true
+  }
+}
