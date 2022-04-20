@@ -1,6 +1,9 @@
 const {Pool} = require('pg');
+const dotenv = require('dotenv')
+
+dotenv.config()
 
 module.exports = new Pool({
   max: 10,
-  connectionString: "postgres://abassadamo:869480@localhost:5432/talk"
+  connectionString: process.env.DATABASE_URL
 });
