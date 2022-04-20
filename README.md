@@ -17,7 +17,7 @@ return the least cost route for a given destination.
 ## Setup
 - git clone https://github.com/iamtope/lcr.git
 - run `npm install` to install your dependencies
-- run the following queries on your database to seed your data into the database
+- run the following queries on your database terminal to seed your data into the database
 ## 1
 CREATE TABLE teleco_route (
     id SERIAL PRIMARY KEY,
