@@ -102,7 +102,7 @@ DELIMITER ';'
 CSV HEADER;
 
 
-- Replace paths in lines 49,66,83, 100 with the right path to the files
+- Replace lines containing Users/abassadamo/Downloads/Tech_Interview/lcr/rate_lists/.... with the right path to each csv files in your computer
 
 - run `npm run start` to start the application
 
